@@ -5,6 +5,7 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2C060F6B-B593-43D3-9A67-78A8722F6E59}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
 		src\docker-compose.override.yml = src\docker-compose.override.yml
 		src\docker-compose.yml = src\docker-compose.yml
 		..\..\..\SWD391\Code\Microservice-e0b9a33031d70eb92cc0c0b20e4fc78541350bd2\Microservice-e0b9a33031d70eb92cc0c0b20e4fc78541350bd2\global.json = ..\..\..\SWD391\Code\Microservice-e0b9a33031d70eb92cc0c0b20e4fc78541350bd2\Microservice-e0b9a33031d70eb92cc0c0b20e4fc78541350bd2\global.json

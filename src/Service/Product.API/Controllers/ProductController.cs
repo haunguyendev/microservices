@@ -43,10 +43,26 @@ namespace Product.API.Controllers
             return Ok(result);
 
         }
+        [HttpGet("get-product-by-no/{no}")]
+        public async Task<IActionResult> GetProduct([Required] string no)
+        {
+            var product = await _repository.GetProductByNo(no);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            var result = _mapper.Map<ProductDto>(product);
+            return Ok(result);
+
+        }
 
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto productDto)
         {
+            var productEntity = await _repository.GetProductByNo(productDto.No);
+            if (productEntity != null)
+                return BadRequest($"Product No: {productDto.No} is existed!");
+            
             var product = _mapper.Map<CatalogProduct>(productDto);
             await _repository.CreateProduct(product);
             await _repository.SaveChangesAsync();
